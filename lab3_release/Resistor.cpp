@@ -13,6 +13,13 @@
 
 // functions //
 
+// initialize resistor
+Resistor::Resistor(string name_, double resistance_, int endpoints_[2])
+    : name(name_), resistance(resistance_) {
+    endpointNodeIDs[0] = endpoints_[0];
+    endpointNodeIDs[1] = endpoints_[1];
+}
+
 string Resistor::getName() {
   return name;
 }

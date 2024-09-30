@@ -8,14 +8,16 @@
 #include "Node.h"
 #include "string.h"
 
+Node::Node() : numRes(0), voltage(0), voltageIsSet(false) {} // Initialize Node
+
 bool Node::canAddResistor() {
     return numRes < MAX_RESISTORS_PER_NODE;
 }
 
 void Node::addResistor(int rIndex) {
     if (canAddResistor()) {
+        resIDArray[numRes] = rIndex;
         numRes += 1;
-        resIDArray.append(rIndex);
     }
 }
 
